@@ -296,7 +296,7 @@ a {
 
 #columns {
   position: absolute;
-  top: 2088px; /* значение из пустотф*/
+  top: 2088px;
   width: 1920px;
   height: 600px;
 }
