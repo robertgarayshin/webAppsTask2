@@ -1,40 +1,67 @@
 const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
+let currentSlide = [0, 1, 2];
+
 const slidesOnPage = 3;
 const style1 = window.getComputedStyle(document.querySelector('.slide.first'))
 const style2 = window.getComputedStyle(document.querySelector('.slide.second'))
 const style3 = window.getComputedStyle(document.querySelector('.slide.third'))
 
 
-function showSlide(n) {
-    let left1 = parseInt(style1.getPropertyValue("left"))
-    let left2 = parseInt(style2.getPropertyValue('left'))
-    let left3 = parseInt(style3.getPropertyValue('left'))
-    console.log(left1, left2, left3)
-    if (n == currentSlide - 1) {
-        slides[currentSlide].classList.remove('third');
-    } 
-    else {
-        slides[currentSlide].classList.remove('first');
+function changeSlideRight() {
+    
+    slides[currentSlide[0]].classList.remove('first')
+    slides[currentSlide[1]].classList.remove('second')
+    slides[currentSlide[2]].classList.remove('third')
+    currentSlide[0] += 1
+    currentSlide[1] += 1
+    currentSlide[2] += 1
+    if (currentSlide[2] == 5) {
+        currentSlide[2] = 0
     }
-    currentSlide = (n + slides.length) % slides.length;
-    if (n == currentSlide - 1) {
-        slides[currentSlide].classList.add('third');
-    } 
-    else {
-        slides[currentSlide].classList.add('first');
+    if (currentSlide[1] == 5) {
+        currentSlide[1] = 0
     }
-    window.getComputedStyle(document.querySelector('.slide.first')).setProperty("left", `${left1}px`)
-    window.getComputedStyle(document.querySelector('.slide.second')).setProperty("left", `${left2}px`)
-    window.getComputedStyle(document.querySelector('.slide.third')).setProperty("left", `${left3}px`)
-}
+    if (currentSlide[0] == 5) {
+        currentSlide[0] = 0
+    }
+    
+    slides[currentSlide[2]].classList.add('third')
+    slides[currentSlide[1]].classList.add('second')
+    slides[currentSlide[0]].classList.add('first')
+    }
+
+    function changeSlideLeft() {
+    
+        slides[currentSlide[0]].classList.remove('first')
+        slides[currentSlide[1]].classList.remove('second')
+        slides[currentSlide[2]].classList.remove('third')
+        currentSlide[0] -= 1
+        currentSlide[1] -= 1
+        currentSlide[2] -= 1
+        console.log(currentSlide)
+        if (currentSlide[2] == -1) {
+            currentSlide[2] = 4
+        }
+        if (currentSlide[1] == -1) {
+            currentSlide[1] = 4
+        }
+        if (currentSlide[0] == -1) {
+            currentSlide[0] = 4
+        }
+        console.log(currentSlide)
+        slides[currentSlide[0]].classList.add('first')
+        slides[currentSlide[1]].classList.add('second')
+        slides[currentSlide[2]].classList.add('third')
+        }
+    
 
 document.getElementById('arrowLeft').addEventListener('click', () => {
-    showSlide(currentSlide - 1);
+    changeSlideLeft();
+    console.log(currentSlide[0], currentSlide[1], currentSlide[2])
 });
 
 document.getElementById('arrowRight').addEventListener('click', () => {
-    showSlide(currentSlide + 1);
+    changeSlideRight();
+    console.log(currentSlide[0], currentSlide[1], currentSlide[2])
 });
 
-showSlide(0)

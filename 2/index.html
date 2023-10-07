@@ -12,7 +12,29 @@
             <div id="navbar">
                 <ul class="navbarItems">
                     <li id="navbarItem1">Главная</li>
-                    <li id="navbarItem2">Каталог</li>
+                    <li id="navbarItem2">
+                        <p id="item2">Каталог</p>
+                        <ul id="dropdownMenu">
+                            <li class="dropdownText ec">
+                                Эконом
+                            </li>
+                            <li class="dropdownText comf">
+                                Комфорт
+                                <ul id="level2">
+                                    <li class="dropdownText">Suzuki</li>
+                                    <li class="dropdownText">Toyota</li>
+                                    <li class="dropdownText">Volvo</li>
+                                    <li class="dropdownText">Москвич</li>
+                                    <li class="dropdownText">Nissan</li>
+                                    <li class="dropdownText">Opel</li>
+                                </ul>
+                            </li>
+                            <li class="dropdownText">Бизнес</li>
+                            <li class="dropdownText">Premium</li>
+                            <li class="dropdownText">Внедорожники</li>
+                            <li class="dropdownText">Уникальные</li>
+                        </ul>
+                    </li>
                     <li id="navbarItem3">Сдать авто</li>
                     <li id="navbarItem4">О нас</li>
                     <li id="navbarItem5">Контакты</li>
@@ -29,9 +51,22 @@
                 <p id="city">Город</p>
                 <p id="begin">Начало</p>
                 <p id="end">Окончание</p>
-                <div id="cityRect"></div>
-                <div id="beginRect"></div>
-                <div id="endRect"></div>
+                <div id="cityRect">
+                    <img class="vectorImg" src="City.svg">
+                    <p class="rectText city">Город</p>
+                </div>
+                <div id="beginRect">
+                    <img class="vectorImg" src="Date.svg">
+                    <p class="rectText date">Дата</p>
+                    <p class="rectText time">Время</p>
+                    <div class="rectLine"></div>
+                </div>
+                <div id="endRect">
+                    <img class="vectorImg" src="Date.svg">
+                    <p class="rectText date">Дата</p>
+                    <p class="rectText time">Время</p>
+                    <div class="rectLine"></div>
+                </div>
                 <div id="findRect"></div>
             </div>
         </div>

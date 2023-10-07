@@ -71,10 +71,72 @@ a {
 
 #navbarItem2 {
     width: 88px;
+    height: 34px;
     position: absolute;
     top: 70px;
     left: 152px;
 }
+#item2 {
+    position: absolute;
+    top: -20px;
+}
+.dropdownText {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+    padding: 12px;
+    padding-left: 0px;
+    text-align: left;
+}
+
+#dropdownMenu {
+    width: 207px;
+    height: 300px;
+    border-radius: 15px;
+    display: none;
+    position: absolute;
+    top: 30px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    text-decoration: none;
+    text-align: left;
+  }
+
+  #dropdownMenu li:hover {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #f2f2f2;
+  }
+
+#navbarItem2:hover #dropdownMenu {
+    display: block;
+}
+
+#level2{
+    width: 207px;
+    height: 300px;
+    border-radius: 15px;
+    display: none;
+    position: absolute;
+    top: -30px;
+    left: 230px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    text-decoration: none;
+    text-align: left;
+}
+
+.dropdownText.comf:hover #level2 {
+    display: block;
+}
+
 
 #navbarItem3 {
     width: fit-content;
@@ -154,6 +216,13 @@ a {
     line-height: 132.9%;
 }
 
+.vectorImg {
+    position: absolute;
+    top:30px;
+    left: 23px;
+    fill: #E2E2E2;
+}
+
 #city {
     color: #B9B7B7;
     font-family: Montserrat;
@@ -164,6 +233,40 @@ a {
     position: absolute;
     top: 290px;
     left: 87px;
+}
+
+.rectText {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.rectText.city {
+    position: absolute;
+    left:61px;
+    top:8px
+}
+
+.rectText.date {
+    position: absolute;
+    left: 67px;
+    top:8px;
+}
+.rectText.time {
+    position: absolute;
+    left: 244px;
+    top:8px;
+}
+.rectLine {
+    width: 1px;
+    height: 50px;
+    position: absolute;
+    left:221px;
+    top:18px;
+    background: #E2E2E2;
 }
 
 #begin {
@@ -435,11 +538,13 @@ a {
     position: absolute;
     top:339px;
     left: 132px;
+    cursor: pointer;
 }
 #arrowRight {
     position: absolute;
     top:339px;
     left: 1786px;
+    cursor: pointer;
 }
 
 #imageContainer2 {
